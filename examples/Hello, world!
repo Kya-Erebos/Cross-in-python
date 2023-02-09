@@ -1,0 +1,15 @@
+include <stdlib> as *; // imports standard library without namespace
+
+public class main => {          // main class, execution begins in here
+
+    public def __init__() => {  // overwrites default __init__ func
+                                // ALL classes have this declared
+    pass; // no function
+    }
+
+    public def main() => {       // main function, execution starts here
+
+    out.print("Hello, World!", end=''); // from <stdlib>
+    }
+}
+
