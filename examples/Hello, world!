@@ -1,15 +1,12 @@
-include <stdlib> as *; // imports standard library without namespace
+|include <stdlib> as *|
+|include <stdio> as *|
 
-public class main => {          // main class, execution begins in here
+class main implements runtime {
 
-    public def __init__() => {  // overwrites default __init__ func
-                                // ALL classes have this declared
-    pass; // no function
-    }
+    private static ErrorHandle err = new ErrorHandle();
 
-    public def main() => {       // main function, execution starts here
-
-    out.print("Hello, World!", end=''); // from <stdlib>
+    public static func main(int argc, char** argv) => int {
+        out.println("Hello, World");
+        return 0;
     }
 }
-

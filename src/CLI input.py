@@ -1,15 +1,16 @@
-import lexer
+import lexer as lexx
 def main():
-    lex = lexer.lexer()
+    lexer = lexx.lexer()
+
     while True:
-        Input = input('cross  <> ')
-        if Input == 'quit()':
+        text = input('Cross <> ')
+        if text == 'quit':
             return
         else:
-            lex.getText(Input)
-            tok, err = lex.lex()
+            lexer.getInput(text)
+            tokens, err = lexer.lex()
             if err: print(err)
-            else: print(tok)
+            else: print(tokens)
 
 
 if __name__ == '__main__':
