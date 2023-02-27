@@ -63,8 +63,15 @@ class lexer:
             FirstChar = False
             self.advance()
 
+        if tok_str[0] in '0123456789':
+            if '.' in tok_str:
+                try: return token(float, float(tok_str)), None
+                except ValueError: return None, f'Error: illegal string \'{tok_str}\''
+            else:
+                try: return token(int, int(tok_str)), None
+                except ValueError: return None, f'Error: cannot have variable name \'{tok_str}\''
 
-        if len(tok_str) == 1:
+        elif len(tok_str) == 1:
             if tok_str in '+-*/%':
                 return token(tok_str), None
             else:
